@@ -1,7 +1,7 @@
 resource "google_project" "terraform" {
   org_id              = var.org_id
   billing_account     = var.billing_account
-  project_id          = var.terraform_project
+  project_id          = var.terraform_project_id
   name                = var.terraform_project_name
   auto_create_network = false
   skip_delete         = true
