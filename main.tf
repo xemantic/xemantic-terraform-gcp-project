@@ -51,7 +51,10 @@ resource "time_sleep" "after_terraform_service_account" {
 data "google_iam_policy" "terraform" {
   binding {
     role    = "roles/owner"
-    members = [google_service_account.terraform.member]
+    members = concat(
+      [google_service_account.terraform.member],
+      var.terraform_admins
+    )
   }
 }
 

@@ -36,6 +36,11 @@ variable "location" {
   type        = string
 }
 
+variable "terraform_admins" {
+  description = "The list of members who can administer terraform project itself"
+  type        = list(string)
+}
+
 variable "terraformers" {
   description = "The list of members who can impersonate terraform service account"
   type        = list(string)
